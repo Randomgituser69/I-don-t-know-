@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+ <html lang="en">
+  <head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+ <title>Frontend Mentor | Stats preview card component</title>
+    <!-- CSS Reset -->
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+        }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+        main {
+            display: block;
+        }
+        h1 {
+            font-size: 2em;
+            margin: 0.67em 0;
+        }
+        hr {
+            box-sizing: content-box;
+            height: 0;
+            overflow: visible;
+        }
+        a {
+            background-color: transparent;
+            -webkit-text-decoration-skip: objects;
+        }
+        abbr[title] {
+            border-bottom: none;
+            text-decoration: underline;
+            text-decoration: underline dotted;
+        }
+        b, strong {
+            font-weight: bolder;
+        }
+        code, kbd, samp {
+            font-family: monospace, monospace;
+            font-size: 1em;
+        }
+        small {
+            font-size: 80%;
+        }
+        sub, sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+        }
+        sub {
+            bottom: -0.25em;
+        }
+        sup {
+            top: -0.5em;
+        }
+        img {
+            border-style: none;
+        }
+        button, input, optgroup, select, textarea {
+            font-family: sans-serif;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+        button, input {
+            overflow: visible;
+        }
+        button, select {
+            text-transform: none;
+        }
+        button, [type="button"], [type="reset"], [type="submit"] {
+            -webkit-appearance: button;
+        }
+        button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+            border-style: none;
+            padding: 0;
+        }
+        button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring {
+            outline: 1px dotted ButtonText;
+        }
+        fieldset {
+            padding: 0.35em 0.75em 0.625em;
+        }
+        legend {
+            box-sizing: border-box;
+            color: inherit;
+            display: table;
+            max-width: 100%;
+            padding: 0;
+            white-space: normal;
+        }
+        progress {
+            vertical-align: baseline;
+        }
+        textarea {
+            overflow: auto;
+        }
+        [type="checkbox"], [type="radio"] {
+            box-sizing: border-box;
+            padding: 0;
+        }
+        [type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+            height: auto;
+        }
+        [type="search"] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px;
+        }
+        [type="search"]::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit;
+        }
+        details {
+            display: block;
+        }
+        summary {
+            display: list-item;
+        }
+        template {
+            display: none;
+        }
+        [hidden] {
+            display: none;
+        } 
+      </style>
+    <!--CSS code-->
+        <style> 
+    :root {
+--Very-dark-blue (main background): hsl(233, 47%, 7%);
+--Dark-desaturated-blue (card background): hsl(244, 38%, 16%);
+--Soft-violet (accent): hsl(277, 64%, 61%);
+--White (main heading, stats): hsl(0, 0%, 100%);
+--Slightly-transparent-white (main paragraph): hsla(0, 0%, 100%, 0.75);
+--Slightly-transparent-white (stat headings): hsla(0, 0%, 100%, 0.6);
+    }
+    body {
+        padding: 1rem;
+       align-content: center;
+        justify-content: center; 
+        min-height: 100svh;
+      background-color: hsl(233, 47%, 7%);
+    } 
+         * {
+           font-family: 'inter', sans-serif;
+         }
+    .Component-card {
+      display: flex;
+        
+      flex-direction: row-reverse;
+      background-color: hsl(244, 30%, 10%);
+      border-radius: 1rem;
+      overflow: hidden;
+        }
+    .content { 
+      padding: 1rem;
+      color: hsla(0, 0%, 100%, 0.75); 
+      gap: 0;
+      margin: 0;
+    }
+            p {
+                padding-bottom: 4rem;
+            }
+    h2 {
+      font-family: 'Inter', sans-serif; 
+      color:  hsl(0, 0%, 100%);
+    } 
+    .accent {
+      color: hsl(277, 64%, 61%);
+    }
+    picture {
+        width: 50%;
+    }
+    picture img {
+        background-image: url(image-header-mobile.jpg);
+    } 
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly; 
+        align-content: center;
+        text-align: center;
+    }
+    li {
+      font-family: 'Lexend Deca', sans-serif;
+      display: grid;
+      list-style-type: none;
+      color: hsla(0, 0%, 100%, 0.6); 
+      text-transform: uppercase;
+    }
+    .stats { 
+      display: inline; 
+      font-family: 'inter', sans-serif;
+      text-transform: lowercase;
+      color: hsl(0, 0%, 100%);
+    }
+         .uppercase {
+         text-transform: uppercase;
+         }
+            
+    .attribution h4, p, a {
+      text-decoration: none;
+      text-transform: none;
+      text-decoration-style: none;
+     color: hsl(0, 0%, 100%);
+    }
+    .attribution { 
+      font-size: 0.688rem; 
+      text-align: center; 
+    } 
+
+@media (width < 768px) {
+       .Component-card {
+           flex-direction: column;
+           max-width: 21.875rem; 
+       }
+    p {
+        padding-bottom: 1rem;
+    }
+        ul {
+          flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+}
+    @media (width >= 48rem) {
+        .Component-card {
+            align-content: center;
+        flex-direction: row-reversed;
+    } 
+        ul .uppercase {
+          flex-direction: row;
+        }
+    }
+      </style>
+  </head>
+<body>
+  <!-- Components -->
+   <div class="Component-card">
+       <picture>
+           <img src="image-header-mobile.jpg">
+       </picture>
+      <!-- Content -->
+        <div class="content">  
+          <h2>Get <strong class="accent">insights</strong> that help your business grow.</h2>
+            <p>Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.</p>
+  <!-- Stats -->
+      <ul>
+    <li><strong class="stats">10k+</strong> companies</li>
+  <li><strong class="stats">314</strong> templates</li>
+<li><strong class="stats uppercase">12m+</strong> queries</li>
+   </ul>
+        </div>
+       <div class="right">
+           <div class="image"></div>
+       </div>
+   </div>
+  <!-- Attributes -->
+  <footer class="attribution">
+    <h4>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</h4>
+       <p>Coded by <a href="#">Tahsin</a></p>
+  </footer>
+ </body>
+</html>
